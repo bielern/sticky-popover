@@ -10,7 +10,7 @@ function NumberExplanation({number}: {number: number}) {
       <Popover.Button className="text-left">
         {number}
       </Popover.Button>
-      <Popover.Panel static className="z-10 hidden group-hover:block absolute -top-5 left-0">
+      <Popover.Panel static className="hidden group-hover:block absolute -top-5 left-0">
         <div className="p-5 border border-gray-600 bg-white shadow-lg rounded-md w-[24ch] text-left">
           <h2 className='text-5xl font-bold mb-6'>The Number {number}</h2>
           <p className='font-normal text-gray-700 text-2xl'>
@@ -31,7 +31,7 @@ export default function Home() {
           <tr className="text-5xl font-bold">
             <th className="p-5 sticky top-0 left-0 z-10 bg-white"></th>
             {numbers.map((number) =>
-              <th key={number} className="sticky top-0 bg-white">
+              <th key={number} className="sticky top-0 bg-white hover:z-10">
                 <div className='border-b-2 border-gray-400 p-5'>
                   <NumberExplanation number={number} />
                 </div>
@@ -41,7 +41,7 @@ export default function Home() {
         <tbody>
           {numbers.map((number) => (
             <tr key={number} className="text-5xl">
-              <td className="sticky left-0 bg-white font-bold">
+              <td className="sticky left-0 hover:z-20 bg-white font-bold">
                 <div className='border-r-2 border-gray-400 p-5'>
                   <NumberExplanation number={number} />
                 </div>
